@@ -28,18 +28,6 @@ set list listchars=tab:>-,trail:.,precedes:<,extends:>
 " use Vundle to manage plugins
 set rtp+=~/.vim/bundle/vundle/
 
-" Window-split background colour
-highlight VertSplit ctermbg=8
-highlight VertSplit ctermfg=0
-
-" Highlight text overflow beyond 79 characters
-highlight OverLength ctermbg=red ctermfg=white
-autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>79v.\+', -1)
-
-" code templates
-autocmd BufNewFile  *.py        0r ~/.vim/templates/skel.py
-autocmd BufNewFile  *.awk       0r ~/.vim/templates/skel.awk
-
 " load plugin bundles
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -59,3 +47,16 @@ let g:solarized_contrast="med"
 let g:solarized_visibility="med"
 colorscheme solarized
 syntax on
+
+" Window-split background colour
+highlight VertSplit ctermbg=8
+highlight VertSplit ctermfg=0
+
+" Highlight text overflow beyond 79 characters
+highlight OverLength ctermbg=red ctermfg=white
+autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>79v.\+', -1)
+
+" code templates
+autocmd BufNewFile  *.py        0r ~/.vim/templates/skel.py
+autocmd BufNewFile  *.awk       0r ~/.vim/templates/skel.awk
+
