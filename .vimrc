@@ -3,7 +3,7 @@
 filetype off
 filetype plugin indent on
 
-set t_Co=256                    " Number of terminal colours
+set t_Co=16
 set background=dark
 set textwidth=79
 set tabstop=4
@@ -22,44 +22,11 @@ set nocompatible                " Disable vi-compatibility
 "set cursorline
 "set cursorcolumn
 
-"
-" /* vim plugins */
-"
-set rtp+=~/.vim/bundle/vundle/  " use Vundle to manage plugins
+" Show < or > when characters are not displayed on the left or right
+set list listchars=tab:>-,trail:.,precedes:<,extends:>
 
-"
-" /* Vundle configuration */
-"
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-powerline'
-"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'davidhalter/jedi-vim'
-
-"
-" /* vim-powerline configuration */
-"
-"                                            ______
-"         _________                          \    /__
-"         \_____   \______  _  _____________ /   /'__' ___   ____
-"          |    ___/  _ \ \/ \/ / __ \_  ___\   / |  |/   \_/ __ \
-"          |   |  |  (_) \  _  /  ___/|  |  /  /__|  |  |  \  ___/
-"          '___'   \____/ \/ \/ \___  |__' /___  /'__'__|  /\___ \
-"                                   \/        / /        \/     \/
-"                                            | /
-"                                            |/
-"                                            '
-
-let g:Powerline_symbols = 'fancy'
-"let g:Powerline_colorscheme = 'solarized256'
-
-"
-" /* Personalised customisation settings */
-"
-syntax on
-colorscheme solarized
+" use Vundle to manage plugins
+set rtp+=~/.vim/bundle/vundle/
 
 " Window-split background colour
 highlight VertSplit ctermbg=8
@@ -67,11 +34,28 @@ highlight VertSplit ctermfg=0
 
 " Highlight text overflow beyond 79 characters
 highlight OverLength ctermbg=red ctermfg=white
-au BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>79v.\+', -1)
+autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>79v.\+', -1)
 
-" Show < or > when characters are not displayed on the left or right
-set list listchars=tab:>-,trail:.,precedes:<,extends:>
-
-" Initialise new scripts from templates based on file extension
+" code templates
 autocmd BufNewFile  *.py        0r ~/.vim/templates/skel.py
 autocmd BufNewFile  *.awk       0r ~/.vim/templates/skel.awk
+
+" load plugin bundles
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'davidhalter/jedi-vim'
+
+" vim-colors-solarised
+let g:solarized_termcolors=16
+let g:solarized_termtrans=1
+let g:solarized_degrade=16
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+let g:solarized_contrast="med"
+let g:solarized_visibility="med"
+colorscheme solarized
+syntax on
