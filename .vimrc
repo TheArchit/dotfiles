@@ -49,7 +49,7 @@ colorscheme solarized
 syntax on
 
 " Window-split background colour
-highlight VertSplit ctermbg=8
+highlight VertSplit ctermbg=none
 highlight VertSplit ctermfg=0
 
 " Highlight text overflow beyond 79 characters
