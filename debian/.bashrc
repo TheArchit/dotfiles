@@ -108,3 +108,18 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# -- END OF DEBIAN DEFAULt .bashrc -- #
+umask 027
+
+PATH="${PATH}:${HOME}/bin:${HOME}/sbin"
+
+# If we're not already running under tmux try to attach
+# to any running sessions
+if [ -n ${TMUX} ] ; then
+    if [ ${TERM} != "screen" ] ; then
+        tmux attach > /dev/null 2>&1
+    fi
+fi
+
+export HOME
