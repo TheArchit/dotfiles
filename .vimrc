@@ -57,6 +57,6 @@ highlight OverLength ctermbg=red ctermfg=white
 autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>79v.\+', -1)
 
 " code templates
-autocmd BufNewFile  *.py        0r ~/.vim/templates/skel.py
 autocmd BufNewFile  *.awk       0r ~/.vim/templates/skel.awk
-
+autocmd BufNewFile  *.py        0r ~/.vim/templates/skel.py
+autocmd BufNewFile  *.sh        0r ~/.vim/templates/skel.sh
