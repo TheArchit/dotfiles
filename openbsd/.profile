@@ -26,6 +26,12 @@ EDITOR="/usr/local/bin/vim"
 PAGER="less"
 TOP="-s1 -H"
 
+# Make SSH's auth socket predictable
+if [ "${SSH_AUTH_SOCK}" != ~/.ssh/auth_sock ]  ; then
+    ln -sf ${SSH_AUTH_SOCK} ~/.ssh/auth_sock
+    SSH_AUTH_SOCK=~/.ssh/auth_sock
+fi
+
 export LC_ALL LANG PATH HOME TERM EDITOR PAGER TOP
 
 # ksh-specific initialisation
@@ -68,7 +74,7 @@ alias mv="mv -i"
 
 # If we're not already running under tmux try to attach
 # to any running sessions
-if [ -n ${TMUX} ] ; then
+if [ -z "${TMUX}" ] ; then
     if [ ${TERM} != "screen" ] ; then
         tmux attach > /dev/null 2>&1
     fi
