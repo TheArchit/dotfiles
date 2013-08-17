@@ -54,9 +54,13 @@ highlight VertSplit ctermfg=0
 
 " Highlight text overflow beyond 79 characters
 highlight OverLength ctermbg=red ctermfg=white
-autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>79v.\+', -1)
+au BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>79v.\+', -1)
 
 " code templates
-autocmd BufNewFile  *.awk       0r ~/.vim/templates/skel.awk
-autocmd BufNewFile  *.py        0r ~/.vim/templates/skel.py
-autocmd BufNewFile  *.sh        0r ~/.vim/templates/skel.sh
+au BufNewFile      *.awk       0r ~/.vim/templates/skel.awk
+au BufNewFile      *.py        0r ~/.vim/templates/skel.py
+au BufNewFile      *.sh        0r ~/.vim/templates/skel.sh
+
+"au BufWritePost          *.awk       !chmod +x %
+"au BufWritePost          *.py        !chmod +x %
+"au BufWritePost          *.sh        !chmod +x %
