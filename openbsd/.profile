@@ -18,7 +18,7 @@ case "$-" in
 esac
 
 # Global settings
-LC_ALL="en_US.UTF-8" 
+LC_ALL="en_US.UTF-8"
 LANG="en_US.UTF-8"
 HISTSIZE=15000
 HISTFILESIZE=2000
@@ -28,7 +28,7 @@ TOP="-s1 -H"
 
 # Make SSH's auth socket predictable
 if [ "${SSH_AUTH_SOCK}" != ~/.ssh/auth_sock ]  ; then
-    ln -sf ${SSH_AUTH_SOCK} ~/.ssh/auth_sock
+    ln -sf "${SSH_AUTH_SOCK}" ~/.ssh/auth_sock
     SSH_AUTH_SOCK=~/.ssh/auth_sock
 fi
 
@@ -76,6 +76,6 @@ alias mv="mv -i"
 # to any running sessions
 if [ -z "${TMUX}" ] ; then
     if [ ${TERM} != "screen" ] ; then
-        tmux attach > /dev/null 2>&1
+        tmux -2 attach > /dev/null 2>&1
     fi
 fi
