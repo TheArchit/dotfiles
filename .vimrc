@@ -3,7 +3,7 @@
 filetype off
 filetype plugin indent on
 
-set t_Co=16
+set t_Co=88
 set background=dark
 set textwidth=79
 set tabstop=4
@@ -37,9 +37,9 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'davidhalter/jedi-vim'
 
 " vim-colors-solarised
-let g:solarized_termcolors=16
+let g:solarized_termcolors=88
 let g:solarized_termtrans=1
-let g:solarized_degrade=16
+let g:solarized_degrade=88
 let g:solarized_bold=1
 let g:solarized_underline=1
 let g:solarized_italic=1
