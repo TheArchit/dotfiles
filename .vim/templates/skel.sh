@@ -4,10 +4,11 @@
 #
 #   Usage: ./util.sh
 #
-#   BUGS:
-#           *
 #   TODO:
-#           *
+#   *
+#
+#   BUGS:
+#   *
 #
 
 scriptname="${0##*/}"
