@@ -1,13 +1,20 @@
 #!/usr/local/bin/awk -f
 #
-#   util.awk  -- add description
+#   prog.awk -- Does what a prog does
 #
-#   Usage: ./util.awk
+#   Usage:
+#
+#   TODO:
+#   *
 #
 #   BUGS:
-#           *
-#   TODO:
-#           *
+#   *
+#
+#   Revision History:
+#
+# Date       Author   Notes
+# ---------- -------- ---------------------------------------------------------
+# XX/XX/2013 ranchn   XXX
 #
 
 function func()
