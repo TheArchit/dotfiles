@@ -9,14 +9,6 @@ PATH=${PATH}:/usr/local/bin:/usr/local/sbin:/usr/games
 
 umask 027
 
-case "$-" in
-    *i*) # interactive shell displays daily quote
-        if [ ! -f ~/.hushlogin ] ; then
-            /usr/games/fortune -a
-        fi
-    ;;
-esac
-
 # Global settings
 LC_ALL="en_US.UTF-8"
 LANG="en_US.UTF-8"
@@ -75,6 +67,14 @@ alias mv="mv -i"
 # If we're not already running under tmux try to attach
 # to any running sessions
 if [ -z "${TMUX}" ] ; then
+    # interactive shell displays daily quote
+    case "$-" in
+        *i*)
+            if [ ! -f ~/.hushlogin ] ; then
+                /usr/games/fortune -a
+            fi
+        ;;
+    esac
     if [ ${TERM} != "screen" ] ; then
         tmux -2 attach > /dev/null 2>&1
     fi

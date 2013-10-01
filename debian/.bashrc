@@ -118,7 +118,7 @@ PATH="${PATH}:${HOME}/bin:${HOME}/sbin"
 # to any running sessions
 if [ -n ${TMUX} ] ; then
     if [ ${TERM} != "screen" ] ; then
-        tmux attach > /dev/null 2>&1
+        tmux -2 attach > /dev/null 2>&1
     fi
 fi
 
