@@ -15,6 +15,7 @@ set nowrap
 set laststatus=2                " Always show the statusline
 set encoding=utf-8              " Necessary to show Unicode glyphs
 set nocompatible                " Disable vi-compatibility
+"set foldmethod=syntax           " Folding
 
 " Options I rather switch on manually as necessary
 "set colorcolumn=79              " Show a visual overflow cue line
@@ -46,6 +47,8 @@ let g:solarized_italic=1
 let g:solarized_contrast="med"
 let g:solarized_visibility="med"
 colorscheme solarized
+
+let g:sh_fold_enabled=1
 syntax on
 
 " Window-split background colour
