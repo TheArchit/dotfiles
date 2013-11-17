@@ -8,16 +8,11 @@ HISTFILESIZE=2000
 
 export PATH MANPATH HISTSIZE HISTFILESIZE
 
-# Define some colours for PS prompts
-norm  () { echo -n "\033[0m" ; }
-red   () { echo -n "\033[0;31m" ; }
-green () { echo -n "\033[0;32m" ; }
-
 # Set the prompt
 if [ $(id -u) == 0 ] ; then
-    PS1="$(red)[\u@\h: \W]\\$ $(norm)"
+    PS1="\[$(tput setaf 1)\][\u@\h: \W] $ \[$(tput sgr0)\]"
 else
-    PS1="$(green)[\u@\h: \W]\\$ $(norm)"
+    PS1="\[$(tput setaf 2)\][\u@\h: \W] $ \[$(tput sgr0)\]"
 fi
 
 # User aliases
