@@ -44,10 +44,10 @@ red   () { echo -n "\033[0;31m" ; }
 green () { echo -n "\033[0;32m" ; }
 
 # Set the prompt
-if [ `id -u` == 0 ] ; then
-    PS1="`red`[\u@\h: \W]\\$ `norm`"
+if [ $(id -u) == 0 ] ; then
+    PS1="$(red)[\u@\h: \W]\\$ $(norm)"
 else
-    PS1="`green`[\u@\h: \W]\\$ `norm`"
+    PS1="$(green)[\u@\h: \W]\\$ $(norm)"
 fi
 
 # User aliases
