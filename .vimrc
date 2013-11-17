@@ -44,8 +44,8 @@ let g:solarized_degrade=88
 let g:solarized_bold=1
 let g:solarized_underline=1
 let g:solarized_italic=1
-let g:solarized_contrast="med"
-let g:solarized_visibility="med"
+let g:solarized_contrast='med'
+let g:solarized_visibility='med'
 colorscheme solarized
 
 let g:sh_fold_enabled=1
