@@ -34,5 +34,5 @@ if [ -z "${TMUX}" ] ; then
     fi
 fi
 
-# add ssh identities to agent
-#ssh-add &>/dev/null
+# Add ssh identities to agent
+ssh-add > /dev/null 2>&1
