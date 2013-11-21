@@ -16,8 +16,9 @@ else
 fi
 
 # User aliases
-alias l='ls -laG'
-alias ll='ls -lG'
+alias ls='ls -G'
+alias l='ls -la'
+alias ll='ls -l'
 alias cp='cp -i'
 alias mv="mv -i"
 
