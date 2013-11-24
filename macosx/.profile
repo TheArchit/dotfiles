@@ -2,17 +2,18 @@
 
 PATH=/opt/local/bin:/opt/local/sbin:${PATH}
 MANPATH=/opt/local/share/man:${MANPATH}
+MANWIDTH=80
 
 HISTSIZE=15000
 HISTFILESIZE=2000
 
-export PATH MANPATH HISTSIZE HISTFILESIZE
+export PATH MANPATH MANWIDTH HISTSIZE HISTFILESIZE
 
 # Set the prompt
 if [ $(id -u) == 0 ] ; then
-    PS1="\[$(tput setaf 1)\][\u@\h: \W] $ \[$(tput sgr0)\]"
+    PS1="\[\033[00;31m\]\u@\h: \W $ \[\033[01;0m\]"
 else
-    PS1="\[$(tput setaf 2)\][\u@\h: \W] $ \[$(tput sgr0)\]"
+    PS1="\[\033[01;32m\]\u@\h:\[\033[00m\] \W $ \[\033[01;0m\]"
 fi
 
 # User aliases
