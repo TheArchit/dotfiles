@@ -26,10 +26,10 @@ set nocompatible                " Disable vi-compatibility
 " Show < or > when characters are not displayed on the left or right
 set list listchars=tab:>-,trail:.,precedes:<,extends:>
 
-" use Vundle to manage plugins
+" Use Vundle to manage plugins
 set rtp+=~/.vim/bundle/vundle/
 
-" load plugin bundles
+" Load plugin bundles
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
@@ -48,6 +48,7 @@ let g:solarized_contrast='med'
 let g:solarized_visibility='med'
 colorscheme solarized
 
+" Folds
 let g:sh_fold_enabled=1
 syntax on
 
