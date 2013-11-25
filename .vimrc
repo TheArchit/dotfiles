@@ -3,7 +3,7 @@
 filetype off
 filetype plugin indent on
 
-set t_Co=88
+set t_Co=256
 set background=dark
 set textwidth=79
 set tabstop=4
