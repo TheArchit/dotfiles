@@ -63,6 +63,7 @@ alias l='ls -la'
 alias ll='ls -l'
 alias cp='cp -i'
 alias mv="mv -i"
+alias tmux="env TERM=screen-256color tmux"
 
 # If we're not already running under tmux try to attach
 # to any running sessions
