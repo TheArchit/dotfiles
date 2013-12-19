@@ -7,7 +7,9 @@ MANWIDTH=80
 HISTSIZE=15000
 HISTFILESIZE=2000
 
-export PATH MANPATH MANWIDTH HISTSIZE HISTFILESIZE
+LSCOLORS='Ex'
+
+export PATH MANPATH MANWIDTH HISTSIZE HISTFILESIZE LSCOLORS
 
 # Set the prompt
 if [ $(id -u) == 0 ] ; then
@@ -27,7 +29,7 @@ alias mv="mv -i"
 # to any running sessions
 if [ -z "${TMUX}" ] ; then
     if [ ${TERM} != "screen" ] ; then
-        tmux -2 attach > /dev/null 2>&1
+        tmux attach > /dev/null 2>&1
     fi
 fi
 
