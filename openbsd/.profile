@@ -14,26 +14,31 @@ LC_ALL="en_US.UTF-8"
 LANG="en_US.UTF-8"
 HISTSIZE=15000
 HISTFILESIZE=2000
+LSCOLORS="Ex"
 EDITOR="/usr/local/bin/vim"
 PAGER="less"
 TOP="-s1 -H"
 
 # Make SSH's auth socket predictable
-if [ "${SSH_AUTH_SOCK}" != ~/.ssh/auth_sock ]  ; then
+if [ "${SSH_AUTH_SOCK}" != ~/.ssh/auth_sock ]
+then
     ln -sf "${SSH_AUTH_SOCK}" ~/.ssh/auth_sock
     SSH_AUTH_SOCK=~/.ssh/auth_sock
 fi
 
-export LC_ALL LANG PATH HOME TERM EDITOR PAGER TOP
+export LC_ALL LANG PATH HOME TERM EDITOR PAGER TOP LSCOLORS
 
 # ksh-specific initialisation
-if [ "${SHELL}" == "/bin/ksh" ] ; then
+if [ "${SHELL}" == "/bin/ksh" ]
+then
     # system-wide initialisation for ksh
-    if [ -f /etc/ksh.kshrc ] ; then
+    if [ -f /etc/ksh.kshrc ]
+    then
         . /etc/ksh.kshrc
     fi
     # ksh user customisations
-    if [ -f ~/.kshrc ] ; then
+    if [ -f ~/.kshrc ]
+    then
         . ~/.kshrc
     fi
 fi
@@ -42,41 +47,48 @@ fi
 norm  () { echo -n "\033[0m" ; }
 red   () { echo -n "\033[0;31m" ; }
 green () { echo -n "\033[0;32m" ; }
+bold_norm () { echo -n "\033[1;32m" ; }
 
 # Set the prompt
-if [ $(id -u) == 0 ] ; then
-    PS1="$(red)[\u@\h: \W]\\$ $(norm)"
+if [ $(id -u) == 0 ]
+then
+    PS1="$(red)\u@\h:$(norm) \W \$ "
 else
-    PS1="$(green)[\u@\h: \W]\\$ $(norm)"
+    PS1="$(bold_norm)\u@\h:$(norm) \W \$ "
 fi
 
 # User aliases
-if [ -x /usr/local/bin/colorls ] ; then
+if [ -x /usr/local/bin/colorls ]
+then
     alias ls='colorls -FG'
 fi
 
-if [ -x /usr/local/bin/vim ] ; then
+if [ -x /usr/local/bin/vim ]
+then
     alias vi='/usr/local/bin/vim'
 fi
 
 alias l='ls -la'
 alias ll='ls -l'
 alias cp='cp -i'
-alias mv="mv -i"
-alias tmux="env TERM=screen-256color tmux"
+alias mv='mv -i'
+alias tmux='env TERM=screen-256color tmux'
 
 # If we're not already running under tmux try to attach
 # to any running sessions
-if [ -z "${TMUX}" ] ; then
+if [ -z "${TMUX}" ]
+then
     # interactive shell displays daily quote
     case "$-" in
         *i*)
-            if [ ! -f ~/.hushlogin ] ; then
+            if [ ! -f ~/.hushlogin ]
+            then
                 /usr/games/fortune -a
             fi
         ;;
     esac
-    if [ ${TERM} != "screen" ] ; then
-        tmux -2 attach > /dev/null 2>&1
+    if [ ${TERM} != "screen" ]
+    then
+        tmux attach > /dev/null 2>&1
     fi
 fi
