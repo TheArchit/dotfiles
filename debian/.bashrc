@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\] \$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h: \w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h: \w \$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -109,10 +109,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# -- END OF DEBIAN DEFAULt .bashrc -- #
+# -- END OF DEBIAN DEFAULT .bashrc -- #
+
 umask 027
 
+# Global settings
 PATH="${PATH}:${HOME}/bin:${HOME}/sbin"
+
+# User aliases
+alias tmux="env TERM=screen-256color tmux"
 
 # If we're not already running under tmux try to attach
 # to any running sessions

@@ -1,4 +1,4 @@
-#!/usr/local/bin/awk -f
+#!/usr/bin/awk -f
 #
 #   prog.awk -- Does what a prog does
 #
