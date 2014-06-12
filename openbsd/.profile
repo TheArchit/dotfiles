@@ -20,10 +20,13 @@ PAGER="less"
 TOP="-s1 -H"
 
 # Make SSH's auth socket predictable
-if [ "${SSH_AUTH_SOCK}" != ~/.ssh/auth_sock ]
+if [ -n "${SSH_AUTH_SOCK}" ]
 then
-    ln -sf "${SSH_AUTH_SOCK}" ~/.ssh/auth_sock
-    SSH_AUTH_SOCK=~/.ssh/auth_sock
+    if [ "${SSH_AUTH_SOCK}" != ~/.ssh/auth_sock ]
+    then
+        ln -sf "${SSH_AUTH_SOCK}" ~/.ssh/auth_sock
+        SSH_AUTH_SOCK=~/.ssh/auth_sock
+    fi
 fi
 
 export LC_ALL LANG PATH HOME TERM EDITOR PAGER TOP LSCOLORS
