@@ -7,5 +7,4 @@ fi
 shopt -s checkwinsize
 shopt -s histappend
 
-HISTCONTROL=ignoreboth
-LSCOLORS="Exfxcxdxbxegedabagacad"
+HISTCONTROL="ignoreboth"

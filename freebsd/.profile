@@ -10,10 +10,17 @@ PATH=${HOME}/bin:${HOME}/sbin
 PATH=${PATH}:/bin:/sbin:/usr/bin:/usr/sbin
 PATH=${PATH}:/usr/local/bin:/usr/local/sbin:/usr/games
 
+MANWIDTH=80
+
+HISTSIZE=15000
+HISTFILESIZE=2000
+
+LSCOLORS="Ex"
+
 # Setting TERM is normally done through /etc/ttys.  Do only override
 # if you're sure that you'll never log in via telnet or xterm or a
 # serial line.
-# TERM=xterm;   export TERM
+#TERM=xterm
 
 BLOCKSIZE="K"
 EDITOR="/usr/local/bin/vim"
@@ -31,7 +38,8 @@ then
     fi
 fi
 
-export PATH BLOCKSIZE EDITOR PAGER ENV
+export PATH MANWIDTH LSCOLORS HISTSIZE HISTFILESIZE
+export BLOCKSIZE EDITOR PAGER
 
 # Define some colours for PS prompts
 norm  () { echo -n "\033[0m" ; }
