@@ -1,4 +1,4 @@
-#!/usr/bin/env python -S
+#!/usr/bin/python -S
 
 def main():
     pass
