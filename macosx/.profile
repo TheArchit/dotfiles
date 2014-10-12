@@ -1,6 +1,6 @@
 # $MacOSX: dot.profile Nov 17 15:00:00 GMT 2013, nishalr
 
-PATH=/opt/local/bin:/opt/local/sbin:${PATH}
+PATH=~/Library/Python/2.7/bin:/opt/local/bin:/opt/local/sbin:${PATH}
 MANPATH=/opt/local/share/man:${MANPATH}
 MANWIDTH=80
 
