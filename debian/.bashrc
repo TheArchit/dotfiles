@@ -114,6 +114,7 @@ fi
 umask 027
 
 # Global settings
+MANWIDTH=79
 PATH="${PATH}:${HOME}/bin:${HOME}/sbin"
 
 # User aliases
@@ -127,4 +128,4 @@ if [ -n ${TMUX} ] ; then
     fi
 fi
 
-export HOME
+export HOME MANWIDTH
