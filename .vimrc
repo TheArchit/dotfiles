@@ -12,24 +12,24 @@ set expandtab
 set ff=unix
 set hlsearch
 set nowrap
-set laststatus=2                " Always show the statusline
-set encoding=utf-8              " Necessary to show Unicode glyphs
-set nocompatible                " Disable vi-compatibility
-"set foldmethod=syntax           " Folding
+set laststatus=2                " always show the statusline
+set encoding=utf-8              " show Unicode glyphs
+set nocompatible                " disable vi-compatibility
+"set scrolloff=3                 " lines of context around cursor
 
-" Options I rather switch on manually as necessary
+" options I rather switch on manually as necessary
 "set colorcolumn=79              " Show a visual overflow cue line
 "set relativenumber
 "set cursorline
 "set cursorcolumn
 
-" Show < or > when characters are not displayed on the left or right
+" highlight unwanted spaces
 set list listchars=tab:>-,trail:.,precedes:<,extends:>
 
-" Use Vundle to manage plugins
+" use Vundle to manage plugins
 set rtp+=~/.vim/bundle/vundle/
 
-" Load plugin bundles
+" load plugin bundles
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
@@ -48,15 +48,15 @@ let g:solarized_contrast='med'
 let g:solarized_visibility='med'
 colorscheme solarized
 
-" Folds
+" folds
 let g:sh_fold_enabled=1
 syntax on
 
-" Window-split background colour
+" window-split background colour
 highlight VertSplit ctermbg=none
 highlight VertSplit ctermfg=0
 
-" Highlight text overflow beyond 79 characters
+" highlight text overflow beyond 79 characters
 highlight OverLength ctermbg=red ctermfg=white
 au BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>79v.\+', -1)
 
