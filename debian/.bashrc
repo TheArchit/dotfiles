@@ -115,7 +115,7 @@ umask 027
 
 # Global settings
 MANWIDTH=79
-PATH="${PATH}:${HOME}/bin:${HOME}/sbin"
+PATH="${PATH}:${HOME}/bin:${HOME}/sbin:${HOME}/.local/bin:${HOME}/.local/sbin"
 
 # User aliases
 alias tmux="env TERM=screen-256color tmux"
