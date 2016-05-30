@@ -29,6 +29,7 @@
 			"theme": "default"
 		},
 		"vim": {
+			"components": [ "statusline" ],
 			"colorscheme": "solarized",
 			"theme": "default",
 			"local_themes": {
